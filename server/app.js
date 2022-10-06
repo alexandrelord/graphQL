@@ -2,8 +2,11 @@ import express from 'express';
 import './config/database.js';
 import { graphqlHTTP } from 'express-graphql';
 import schema from './schema/schema.js';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
 
 app.use(
     '/graphql',
